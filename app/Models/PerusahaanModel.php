@@ -8,9 +8,7 @@ class PerusahaanModel extends Model{
     protected $useAutoIncrement = true;
     protected $allowedFields = [
         'id_perusahaan',
-        'Nama_perusahaan',
-        'Alamat_perusahaan',
-        'Nama_peserta',
+        'id_peserta',
         'Legalitas_before',
         'Legalitas_after',
         'Produk_before',
