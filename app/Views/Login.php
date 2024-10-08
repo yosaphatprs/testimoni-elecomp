@@ -151,6 +151,15 @@
             transform: translateY(-50%);
             cursor: pointer;
         }
+        .trouble {
+            text-align: right;
+        }
+
+        .trouble a {
+            font-size: 12px;
+            color: #C07F00;
+        }
+
 
 
         @media (max-width: 768px) {
@@ -218,15 +227,15 @@
                             <div>
                                 <label for="password">Kata Sandi</label>
                             </div>
-                            <div class="input-password">
+                            <div class="password-wrapper">
                                 <input type="password" name="password" id="password" required placeholder="Password minimal 8 karakter dan harus ada karakter spesial" />
                                 <i class="fas fa-eye toggle-password"></i>
                             </div>
-
                         </div>
-                        <!-- <div class="trouble">
-                            <p><a href="/trouble-form">Lupa Password ?</a></p>
-                        </div> -->
+
+                        <div class="trouble">
+                            <p><a href=" ">Lupa Password ?</a></p>
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn-log-in  w-100 theme-btn mx-auto">Log In</button>
                         </div>
