@@ -240,7 +240,7 @@
                             <button type="submit" class="btn-log-in  w-100 theme-btn mx-auto">Log In</button>
                         </div>
                         <div class="sign-up-link">
-                            <p>Belum memiliki akun? <a href="/RegistrasiController">Register</a></p>
+                            <p>Belum memiliki akun? <a href="/registrasi">Register</a></p>
 
                         </div>
                     </form>

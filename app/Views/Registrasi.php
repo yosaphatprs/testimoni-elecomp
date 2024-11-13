@@ -244,7 +244,7 @@
                             <button type="submit" class="btn-log-in w-100 theme-btn mx-auto">Registrasi</button>
                         </div>
                         <div class="sign-up-link">
-                            <p>Sudah memiliki akun ? <a href="/LoginController">Login</a></p>
+                            <p>Sudah memiliki akun ? <a href="/login">Login</a></p>
                         </div>
                     </form>
                 </div>

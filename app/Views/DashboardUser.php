@@ -214,7 +214,7 @@ Dashboard Perusahaan
         <h1>Dashboard Perusahaan</h1>
         <p>Selamat Datang, <b>Alifia Putri Budiyanti.</b> 
             <br>Lihat perkembangan terbaru perusahaan anda di sini.</br></p>
-        <a href="<?= base_url('/Home') ?>" class="btn">My Profile</a>
+        <a href="<?= base_url('/profile') ?>" class="btn">My Profile</a>
     </div>
 </div>
 
