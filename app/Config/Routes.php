@@ -18,3 +18,8 @@ $routes->get('/profile', 'ProfileController::index');
 
 // Route untuk Registrasi
 $routes->get('/registrasi', 'RegistrasiController::index');
+
+// Route untuk progress
+
+// Route untuk Tambah Progress
+$routes->get('/progress/tambah', 'ProgressController::add');
