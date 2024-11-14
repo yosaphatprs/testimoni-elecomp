@@ -6,56 +6,84 @@ Detail Pencapaian Ekspor
 
 <?= $this->section('head') ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<style>
+.form-container {
+    background-color: #FFF7D4;
+}
+
+.form-container .form input {
+    background-color: #FFF7D4;
+}
+
+.form-container .btn-primary {
+    background-color: #4C3D3D;
+}
+
+@media (min-width: 576px) {
+    .form {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+</style>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="container">
-    <div class="form-container">
-        <h1>Tambah Pencapaian Ekspor</h1>
-        <form class="form" action="/progress/tambah">
-            <div class="form-left">
-                <div class="input-form">
-                    <label for="tanggal_ekspor">Tanggal Ekspor</label>
-                    <input type="text" id="tanggal_ekspor" name="tanggal">
+<div class="container px-md-0 px-4">
+    <div class="form-container mt-5 px-5 py-5">
+        <h1 class="text-center">Detail Pencapaian Ekspor</h1>
+        <form class="form row px-md-5 mt-5" action="/progress/tambah">
+            <div class="col-md px-5">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="tanggal_ekspor">Tanggal Ekspor</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="tanggal_ekspor"
+                        name="tanggal">
                 </div>
-                <div class="input-form">
-                    <label for="negara_ekspor">Negara Ekspor</label>
-                    <input type="text" id="negara_ekspor" name="negara">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="negara_ekspor">Negara Ekspor</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="negara_ekspor"
+                        name="negara">
                 </div>
-                <div class="input-form">
-                    <label for="jenis_ekspor">Jenis Ekspor</label>
-                    <input type="text" id="jenis_ekspor" name="jenis">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="jenis_ekspor">Jenis Ekspor</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="jenis_ekspor"
+                        name="jenis">
                 </div>
-                <div class="input-form">
-                    <label for="produk_ekspor">Produk Ekspor</label>
-                    <input type="text" id="produk_ekspor" name="produk">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="produk_ekspor">Produk Ekspor</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="produk_ekspor"
+                        name="produk">
                 </div>
-                <div class="input-form">
-                    <label for="nama_importir">Nama Importir</label>
-                    <input type="text" id="nama_importir" name="nama_importir">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="nama_importir">Nama Importir</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="nama_importir"
+                        name="nama_importir">
                 </div>
             </div>
-            <div class="form-right">
-                <div class="input-form">
-                    <label for="nilai_ekspor_rp">Nilai Ekspor (Rp)</label>
-                    <input type="number" id="nilai_ekspor_rp" name="nilai_ekspor_rp">
+            <div class="col-md px-5">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="nilai_ekspor_rp">Nilai Ekspor (Rp)</label>
+                    <input readonly class="form-control border border-dark border-2" type="number" id="nilai_ekspor_rp"
+                        name="nilai_ekspor_rp">
                 </div>
-                <div class="input-form">
-                    <label for="nilai_ekspor_usd">Nilai Ekspor (USD)</label>
-                    <input type="number" id="nilai_ekspor_usd" name="nilai_ekspor_usd">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="nilai_ekspor_usd">Nilai Ekspor (USD)</label>
+                    <input readonly class="form-control border border-dark border-2" type="number" id="nilai_ekspor_usd"
+                        name="nilai_ekspor_usd">
                 </div>
-                <div class="input-form">
-                    <label for="kuantitas_ekspor">Kuantitas Ekspor</label>
-                    <input type="text" id="kuantitas_ekspor" name="kuantitas">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="kuantitas_ekspor">Kuantitas Ekspor</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="kuantitas_ekspor"
+                        name="kuantitas">
                 </div>
-                <div class="input-form">
-                    <label for="bukti_ekspor">Bukti Ekspor</label>
-                    <input type="text" id="bukti_ekspor" name="bukti">
+                <div class="input-form mb-3">
+                    <label class="form-label" for="bukti_ekspor">Bukti Ekspor</label>
+                    <input readonly class="form-control border border-dark border-2" type="text" id="bukti_ekspor"
+                        name="bukti">
                 </div>
-                <div class="input-form-button">
-                    <a href="/progress">Kembali</a>
-                    <button type="submit">Submit</button>
-                </div>
+            </div>
+            <div class="input-form mb-3-button d-flex justify-content-center mt-5 mb-3">
+                <a class="btn btn-primary w-25" href="/progress">Kembali</a>
             </div>
         </form>
     </div>
