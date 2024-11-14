@@ -15,42 +15,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #eff0f7;
-        }
-
-        .auth-background-col {
-            background-image: url('/images/register.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-        }
-
-        .title {
-            font-size: 25px;
-            font-family: 'Marcellus', serif;
-            color: black;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            color: rgba(0, 0, 0, 0.74);
-            font-family: 'Marcellus', serif;
-        }
-
-        .btn-log-in {
-            background-color: #4C3D3D;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 14px;
-            border-radius: 10px;
-            border: none;
-            font-family: 'Marcellus', serif;
-        }
-    </style>
 </head>
 
 <body class="app app-login p-0">
