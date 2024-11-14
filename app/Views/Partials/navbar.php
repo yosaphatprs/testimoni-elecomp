@@ -7,7 +7,7 @@
     <div class="column-2">
         <a href="/dashboard">Beranda</a>
         <a href="/profile">Profile Perusahaan</a>
-        <a href="#">Progress Perusahaan</a> <!-- Tambahkan route jika sudah tersedia -->
+        <a href="/progress">Progress Perusahaan</a> <!-- Tambahkan route jika sudah tersedia -->
     </div>
     <div class="column-3">
         <a href="/registrasi">Sign In</a>
