@@ -18,13 +18,6 @@ Detail Pencapaian Ekspor
 .form-container .btn-primary {
     background-color: #4C3D3D;
 }
-
-@media (min-width: 576px) {
-    .form {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
 </style>
 <?= $this->endSection() ?>
 
@@ -36,7 +29,8 @@ Detail Pencapaian Ekspor
             <div class="col-md px-5">
                 <div class="input-form mb-3">
                     <label class="form-label" for="tanggal_ekspor">Tanggal Ekspor</label>
-                    <input readonly class="form-control border border-dark border-2" type="text" id="tanggal_ekspor"
+                    <input readonly class="form-control border border-dark border-2" type="text"
+                        value="<?= date('d-m-Y', strtotime($progress['tanggal_ekspor'])) ?>" id="tanggal_ekspor"
                         name="tanggal">
                 </div>
                 <div class="input-form mb-3">
