@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ProgressModel;
 
 class ProgressController extends BaseController
 {
     public function index(): string
     {
-        return view('dashboard_progress');
+        $model = new ProgressModel();
+        $data['progress'] = $model->findAll();
+        return view('dashboard_progress', $data);
     }
 
     public function add(): string

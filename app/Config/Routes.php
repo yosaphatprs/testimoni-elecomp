@@ -22,6 +22,7 @@ $routes->get('/registrasi', 'RegistrasiController::index');
 // Route untuk progress
 
 // Route untuk Tambah Progress
+$routes->get('/progress', 'ProgressController::index');
 $routes->get('/progress/tambah', 'ProgressController::add');
 $routes->get('/progress/edit', 'ProgressController::edit');
 $routes->get('/progress/detail', 'ProgressController::detail');
