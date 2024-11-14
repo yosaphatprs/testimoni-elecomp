@@ -74,7 +74,7 @@ body {
 }
 
 .auth-background-col {
-    background-image: url('/images/register.png');
+    background-image: url('/images/login.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -132,6 +132,15 @@ font-size: 12px;
     transform: translateY(-50%);
     cursor: pointer;
 }
+.trouble {
+    text-align: right;
+}
+
+.trouble a {
+    font-size: 12px;
+    color: #C07F00;
+}
+
 
 
 @media (max-width: 768px) {

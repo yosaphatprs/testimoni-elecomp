@@ -15,58 +15,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-
-    <style>
-        body {
-            background-color: #eff0f7;
-        }
-
-        .title {
-            font-size: 25px;
-            font-weight: 400;
-            font-family: 'Marcellus', serif;
-            color: black;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            color: rgba(0, 0, 0, 0.74);
-            margin: 0px !important;
-            font-family: 'Marcellus', serif;
-        }
-
-        .btn-log-in {
-            background-color: #4C3D3D;
-            height: 50px;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 14px;
-            border-radius: 10px;
-            font-family: 'Marcellus', serif;
-        }
-
-        .auth-background-col {
-            background-image: url('/images/login.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-        }
-
-        .password-wrapper .toggle-password {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        .trouble a {
-            font-size: 12px;
-            color: #C07F00;
-            text-decoration: none;
-        }
-    </style>
+  
 </head>
 
 <body class="app app-login p-0">
