@@ -1,7 +1,7 @@
 <?= $this->extend('Layout/user_layout') ?>
 
 <?= $this->section('title') ?>
-Tambah Pencapaian Ekspor
+Edit Pencapaian Ekspor
 <?= $this->endSection() ?>
 
 <?= $this->section('head') ?>
@@ -134,7 +134,7 @@ input[type=number] {
 <?= $this->section('content') ?>
 <div class="container">
     <div class="form-container">
-        <h1>Tambah Pencapaian Ekspor</h1>
+        <h1>Edit Pencapaian Ekspor</h1>
         <form class="form" action="/progress/tambah">
             <div class="form-left">
                 <div class="input-form">
