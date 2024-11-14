@@ -42,39 +42,39 @@ Detail Pencapaian Ekspor
                 <div class="input-form mb-3">
                     <label class="form-label" for="negara_ekspor">Negara Ekspor</label>
                     <input readonly class="form-control border border-dark border-2" type="text" id="negara_ekspor"
-                        name="negara">
+                        name="negara" value="<?= $progress['negara_ekspor'] ?>" readonly>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="jenis_ekspor">Jenis Ekspor</label>
                     <input readonly class="form-control border border-dark border-2" type="text" id="jenis_ekspor"
-                        name="jenis">
+                        name="jenis" value="<?= $progress['jenis_ekspor'] ?>" readonly>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="produk_ekspor">Produk Ekspor</label>
                     <input readonly class="form-control border border-dark border-2" type="text" id="produk_ekspor"
-                        name="produk">
+                        name="produk" value="<?= $progress['produk_ekspor'] ?>" readonly>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="nama_importir">Nama Importir</label>
                     <input readonly class="form-control border border-dark border-2" type="text" id="nama_importir"
-                        name="nama_importir">
+                        name="nama_importir" value="<?= $progress['nama_importir'] ?>" readonly>
                 </div>
             </div>
             <div class="col-md px-5">
                 <div class="input-form mb-3">
                     <label class="form-label" for="nilai_ekspor_rp">Nilai Ekspor (Rp)</label>
                     <input readonly class="form-control border border-dark border-2" type="number" id="nilai_ekspor_rp"
-                        name="nilai_ekspor_rp">
+                        name="nilai_ekspor_rp" value="<?= $progress['nilai_ekspor_rp'] ?>" readonly>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="nilai_ekspor_usd">Nilai Ekspor (USD)</label>
                     <input readonly class="form-control border border-dark border-2" type="number" id="nilai_ekspor_usd"
-                        name="nilai_ekspor_usd">
+                        name="nilai_ekspor_usd" value="<?= $progress['nilai_ekspor_usd'] ?>" readonly>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="kuantitas_ekspor">Kuantitas Ekspor</label>
                     <input readonly class="form-control border border-dark border-2" type="text" id="kuantitas_ekspor"
-                        name="kuantitas">
+                        name="kuantitas" value="<?= $progress['kuantitas_ekspor'] ?>" readonly>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="bukti_ekspor">Bukti Ekspor</label>
