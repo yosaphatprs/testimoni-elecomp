@@ -1,7 +1,7 @@
 <?= $this->extend('Layout/user_layout') ?>
 
 <?= $this->section('title') ?>
-Tambah Pencapaian Ekspor
+Edit Pencapaian Ekspor
 <?= $this->endSection() ?>
 
 <?= $this->section('head') ?>
@@ -58,49 +58,50 @@ input[type=number] {
 <?= $this->section('content') ?>
 <div class="container px-md-0 px-4">
     <div class="form-container mt-5 px-5 py-5">
-        <h1 class="text-center">Tambah Pencapaian Ekspor</h1>
+        <h1 class="text-center">Edit Pencapaian Ekspor</h1>
         <form class="form row px-md-5 mt-5" action="/progress/edit">
             <div class="col-md px-5">
                 <div class="input-form mb-3">
                     <label class="form-label" for="tanggal_ekspor">Tanggal Ekspor</label>
                     <input class="form-control border border-dark border-2" type="text" id="tanggal_ekspor"
-                        name="tanggal">
+                        value="<?= date('d-m-Y', strtotime($progress['tanggal_ekspor'])) ?>" name="tanggal">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="negara_ekspor">Negara Ekspor</label>
-                    <input class="form-control border border-dark border-2" type="text" id="negara_ekspor"
-                        name="negara">
+                    <input class="form-control border border-dark border-2" type="text" id="negara_ekspor" name="negara"
+                        value="<?= $progress['negara_ekspor'] ?>">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="jenis_ekspor">Jenis Ekspor</label>
-                    <input class="form-control border border-dark border-2" type="text" id="jenis_ekspor" name="jenis">
+                    <input class="form-control border border-dark border-2" type="text" id="jenis_ekspor" name="jenis"
+                        value="<?= $progress['jenis_ekspor'] ?>">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="produk_ekspor">Produk Ekspor</label>
-                    <input class="form-control border border-dark border-2" type="text" id="produk_ekspor"
-                        name="produk">
+                    <input class="form-control border border-dark border-2" type="text" id="produk_ekspor" name="produk"
+                        value="<?= $progress['produk_ekspor'] ?>">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="nama_importir">Nama Importir</label>
                     <input class="form-control border border-dark border-2" type="text" id="nama_importir"
-                        name="nama_importir">
+                        name="nama_importir" value="<?= $progress['nama_importir'] ?>">
                 </div>
             </div>
             <div class="col-md px-5">
                 <div class="input-form mb-3">
                     <label class="form-label" for="nilai_ekspor_rp">Nilai Ekspor (Rp)</label>
                     <input class="form-control border border-dark border-2" type="number" id="nilai_ekspor_rp"
-                        name="nilai_ekspor_rp">
+                        name="nilai_ekspor_rp" value="<?= $progress['nilai_ekspor_rp'] ?>">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="nilai_ekspor_usd">Nilai Ekspor (USD)</label>
                     <input class="form-control border border-dark border-2" type="number" id="nilai_ekspor_usd"
-                        name="nilai_ekspor_usd">
+                        name="nilai_ekspor_usd" value="<?= $progress['nilai_ekspor_usd'] ?>">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="kuantitas_ekspor">Kuantitas Ekspor</label>
                     <input class="form-control border border-dark border-2" type="text" id="kuantitas_ekspor"
-                        name="kuantitas">
+                        name="kuantitas" value="<?= $progress['kuantitas_ekspor'] ?>">
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="bukti_ekspor">Bukti Ekspor</label>
