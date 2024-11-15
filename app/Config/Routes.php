@@ -16,6 +16,9 @@ $routes->get('/login', 'LoginController::index');
 // Route untuk Profile
 $routes->get('/profile', 'ProfileController::index');
 
+// Route untuk Edit Profile
+$routes->get('/profile/edit', 'ProfileController::edit');
+
 // Route untuk Registrasi
 $routes->get('/registrasi', 'RegistrasiController::index');
 
