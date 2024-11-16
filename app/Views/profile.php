@@ -46,7 +46,7 @@ Dashboard Perusahaan
         </div>
     </div>
     <div class="edit-profile-btn">
-        <button>Edit Profile</button>
+        <a href="<?= base_url('profile/edit') ?>" class="btn btn-primary">Edit Profile</a>
     </div>
 
 </div>
