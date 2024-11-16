@@ -18,6 +18,17 @@ Detail Pencapaian Ekspor
 .form-container .btn-primary {
     background-color: #4C3D3D;
 }
+
+#img_bukti {
+    transition: transform 0.5s;
+    height: 200px;
+    margin: 0 auto;
+    cursor: zoom-in;
+}
+
+#img_bukti:hover {
+    transform: scale(1.5);
+}
 </style>
 <?= $this->endSection() ?>
 
@@ -70,10 +81,11 @@ Detail Pencapaian Ekspor
                     <input readonly class="form-control border border-dark border-2" type="text" id="kuantitas_ekspor"
                         name="kuantitas" value="<?= $progress['kuantitas_ekspor'] ?>" readonly>
                 </div>
-                <div class="input-form mb-3">
-                    <label class="form-label" for="bukti_ekspor">Bukti Ekspor</label>
-                    <input readonly class="form-control border border-dark border-2" type="text" id="bukti_ekspor"
-                        name="bukti">
+                <div class="mb-3 flex flex-column">
+                    <p class="form-label" for="bukti_ekspor">Bukti Ekspor</p>
+                    <!-- <input readonly class="form-control border border-dark border-2" type="text" id="bukti_ekspor"
+                        name="bukti"> -->
+                    <img src="/bukti_ekspor/<?= $progress['bukti_ekspor'] ?>" id="img_bukti" alt="Bukti Ekspor">
                 </div>
             </div>
             <div class="input-form mb-3-button d-flex justify-content-center mt-5 mb-3">
@@ -82,4 +94,11 @@ Detail Pencapaian Ekspor
         </form>
     </div>
 </div>
+<script type="text/javascript">
+src = document.getElementById("img_bukti").src;
+document.getElementById("img_bukti").onclick = function() {
+    console.log(src);
+    location.href = src;
+};
+</script>
 <?= $this->endSection() ?>

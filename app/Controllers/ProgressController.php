@@ -96,7 +96,6 @@ class ProgressController extends BaseController
         
         // Mengambil data berdasarkan ID
         $data['progress'] = $this->progressModel->getProgress($id);  // Mengambil satu data berdasarkan ID
-        
         // Pastikan data ditemukan, jika tidak, tampilkan error atau redirect
         if (empty($data['progress'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Data tidak ditemukan.");
