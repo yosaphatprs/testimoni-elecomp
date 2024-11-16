@@ -155,6 +155,8 @@ class ProgressController extends BaseController
                 unlink('bukti_ekspor/' . $namaBukti);
             }
             return view('/progress/edit_progress', ['progress' => $this->progressModel->getProgress($id), 'errors' => $this->progressModel->errors()]);
+        } else {
+            unlink('bukti_ekspor/' . $buktiLama);
         }
 
         session()->setFlashdata('message', 'Progress berhasil diubah.');

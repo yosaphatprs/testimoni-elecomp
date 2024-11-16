@@ -32,6 +32,11 @@ $(function() {
     width: 45%;
 }
 
+#img_bukti {
+    height: 200px;
+    margin: 0 auto;
+}
+
 @media (max-width: 576px) {
     .form-container .btn-primary {
         width: 100%;
