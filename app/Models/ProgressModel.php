@@ -35,16 +35,14 @@ class ProgressModel extends Model
     protected $validationRules = [
         'id_perusahaan'       => 'required|is_natural_no_zero',
         'tanggal_ekspor'      => 'required|valid_date',
-        'nilai_ekspor_rp'     => 'required|decimal',
-        'nilai_ekspor_usd'    => 'required|decimal',
-        'negara_ekspor'       => 'required|max_length[100]',
+        'nilai_ekspor_rp'     => 'required|numeric',
+        'nilai_ekspor_usd'    => 'required|numeric',
+        'negara_ekspor'       => 'required|max_length[50]',
         'jenis_ekspor'        => 'required|max_length[50]',
-        'kuantitas_ekspor'    => 'required|decimal',
-        'produk_ekspor'       => 'required|string',
+        'kuantitas_ekspor'    => 'required',
+        'produk_ekspor'       => 'required',
         'bukti_ekspor'        => 'required|string',
         'nama_importir'       => 'required|max_length[255]',
-        'created_at'          => 'valid_date',
-        'updated_at'          => 'valid_date'
     ];
 
     // Pesan kesalahan untuk validasi
@@ -54,38 +52,40 @@ class ProgressModel extends Model
             'is_natural_no_zero' => 'ID perusahaan harus berupa angka yang valid.'
         ],
         'tanggal_ekspor' => [
+            'required' => 'Tanggal ekspor harus diisi.',
             'valid_date' => 'Tanggal ekspor harus berupa tanggal yang valid.'
         ],
         'nilai_ekspor_rp' => [
-            'decimal' => 'Nilai ekspor (IDR) harus berupa angka desimal.'
+            'required' => 'Nilai ekspor (Rp) harus diisi.',
+            'numeric' => 'Nilai ekspor (Rp) harus berupa angka.'
         ],
         'nilai_ekspor_usd' => [
-            'decimal' => 'Nilai ekspor (USD) harus berupa angka desimal.'
+            'required' => 'Nilai ekspor (USD) harus diisi.',
+            'numeric' => 'Nilai ekspor (USD) harus berupa angka.'
         ],
         'negara_ekspor' => [
-            'max_length' => 'Negara ekspor maksimal 100 karakter.'
+            'required' => 'Negara ekspor harus diisi.',
+            'max_length' => 'Negara ekspor maksimal 50 karakter.'
         ],
         'jenis_ekspor' => [
+            'required' => 'Jenis ekspor harus diisi.',
             'max_length' => 'Jenis ekspor maksimal 50 karakter.'
         ],
         'kuantitas_ekspor' => [
-            'decimal' => 'Kuantitas ekspor harus berupa angka desimal.'
+            'required' => 'Kuantitas ekspor harus diisi.',
+            'numeric' => 'Kuantitas ekspor harus berupa teks dan angka.'
         ],
         'produk_ekspor' => [
-            'string' => 'Produk ekspor harus berupa teks.'
+            'required' => 'Produk ekspor harus diisi.',
         ],
         'bukti_ekspor' => [
-            'string' => 'Bukti ekspor harus berupa teks.'
+            'required' => 'Bukti Ekspor harus diunggah.'
         ],
         'nama_importir' => [
+            'required' => 'Nama importir harus diisi.',
+            'alpha_numeric' => 'Nama importir harus berupa teks dan angka.',
             'max_length' => 'Nama importir maksimal 255 karakter.'
         ],
-        'created_at' => [
-            'valid_date' => 'Tanggal dibuat tidak valid.'
-        ],
-        'updated_at' => [
-            'valid_date' => 'Tanggal diperbarui tidak valid.'
-        ]
     ];
 
     // Menambahkan pengaturan untuk menghandle waktu secara otomatis
@@ -99,5 +99,13 @@ class ProgressModel extends Model
         return $this->join('perusahaan', 'perusahaan.id = progress.id_perusahaan')
                     ->select('perusahaan.*, progress.*')
                     ->findAll();
+    }
+
+    public function getProgress($id = false){
+        if($id == false){
+            return $this->findAll();
+        }
+
+        return $this->where(['id' => $id])->first();
     }
 }

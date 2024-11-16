@@ -27,3 +27,4 @@ $routes->get('/progress/tambah', 'ProgressController::add');
 $routes->get('/progress/edit/(:num)', 'ProgressController::edit/$1');
 $routes->post('/progress/update/(:num)', 'ProgressController::update/$1');
 $routes->get('/progress/detail/(:num)', 'ProgressController::detail/$1');
+$routes->post('/progress/save', 'ProgressController::save');
