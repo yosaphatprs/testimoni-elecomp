@@ -59,22 +59,34 @@ input[type=number] {
 <div class="container px-md-0 px-4">
     <div class="form-container mt-5 px-5 py-5">
         <h1 class="text-center">Edit Pencapaian Ekspor</h1>
-        <form class="form row px-md-5 mt-5" action="/progress/edit">
+        <form class="form row px-md-5 mt-5" action="/progress/update/<?= $progress['id'] ?>" method="post"
+            enctype="multipart/form-data">
+            <?= csrf_field(); ?>
+            <input type="hidden" name="fotoBuktiLama" value="<?= $progress['bukti_ekspor'] ?>">
             <div class="col-md px-5">
                 <div class="input-form mb-3">
                     <label class="form-label" for="tanggal_ekspor">Tanggal Ekspor</label>
                     <input class="form-control border border-dark border-2" type="text" id="tanggal_ekspor"
                         value="<?= date('d-m-Y', strtotime($progress['tanggal_ekspor'])) ?>" name="tanggal">
+                    <p class="mt-1 text-danger">
+                        <?= isset($errors['tanggal_ekspor']) ? $errors['tanggal_ekspor'] : ''; ?>
+                    </p>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="negara_ekspor">Negara Ekspor</label>
                     <input class="form-control border border-dark border-2" type="text" id="negara_ekspor" name="negara"
                         value="<?= $progress['negara_ekspor'] ?>">
+                    <p class="mt-1 text-danger">
+                        <?= isset($errors['negara_ekspor']) ? $errors['negara_ekspor'] : ''; ?>
+                    </p>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="jenis_ekspor">Jenis Ekspor</label>
                     <input class="form-control border border-dark border-2" type="text" id="jenis_ekspor" name="jenis"
                         value="<?= $progress['jenis_ekspor'] ?>">
+                    <p class="mt-1 text-danger">
+                        <?= isset($errors['jenis_ekspor']) ? $errors['jenis_ekspor'] : ''; ?>
+                    </p>
                 </div>
                 <div class="input-form mb-3">
                     <label class="form-label" for="produk_ekspor">Produk Ekspor</label>
@@ -103,9 +115,16 @@ input[type=number] {
                     <input class="form-control border border-dark border-2" type="text" id="kuantitas_ekspor"
                         name="kuantitas" value="<?= $progress['kuantitas_ekspor'] ?>">
                 </div>
-                <div class="input-form mb-3">
-                    <label class="form-label" for="bukti_ekspor">Bukti Ekspor</label>
-                    <input class="form-control border border-dark border-2" type="text" id="bukti_ekspor" name="bukti">
+                <div class="mb-3 flex flex-column">
+                    <p class="form-label" for="bukti_ekspor">Bukti Ekspor</p>
+                    <!-- <input readonly class="form-control border border-dark border-2" type="text" id="bukti_ekspor"
+                        name="bukti"> -->
+                    <img src="/bukti_ekspor/<?= $progress['bukti_ekspor'] ?>" id="img_bukti" alt="Bukti Ekspor">
+                    <input aria-describedby="file_input_help" type="file"
+                        class="form-control border border-dark border-2 mt-2" id="bukti_ekspor" name="bukti_ekspor">
+                    <p class="mt-1 text-danger">
+                        <?= isset($errorsImage['bukti_ekspor']) ? $errorsImage['bukti_ekspor'] : ''; ?>
+                    </p>
                 </div>
                 <div
                     class="input-form mb-3 d-flex flex-md-row flex-column justify-content-between align-items-center mt-5">

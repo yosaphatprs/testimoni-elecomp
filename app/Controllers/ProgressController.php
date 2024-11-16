@@ -106,10 +106,42 @@ class ProgressController extends BaseController
     
     public function update($id)
     {
-        // Update data berdasarkan ID
+        $fileBukti = $this->request->getFile('bukti_ekspor');
+        $buktiLama = $this->request->getPost('fotoBuktiLama');
         
-        $data = [
-            'tanggal_ekspor' => $this->request->getPost('tanggal'),
+        if ($fileBukti->getError() == 4) {
+            $namaBukti = $buktiLama;
+        } else {
+            if(!$this->validate([
+                'bukti_ekspor' => [
+                    'rules' => 'uploaded[bukti_ekspor]|max_size[bukti_ekspor,2048]|is_image[bukti_ekspor]|mime_in[bukti_ekspor,image/jpg,image/jpeg,image/png]',
+                    'errors' => [
+                        'max_size' => 'Ukuran gambar bukti ekspor terlalu besar.',
+                        'is_image' => 'Yang anda pilih bukan gambar.',
+                        'mime_in' => 'Yang anda pilih bukan gambar.'
+                    ]
+                ],
+            ])) {
+                return view('/progress/edit_progress', [
+                    'progress' => $this->progressModel->getProgress($id),
+                    'errors' => $this->validator->getErrors(),
+                ]);
+            }   
+            $namaBukti = $fileBukti->getRandomName();
+            $fileBukti->move('bukti_ekspor', $namaBukti);
+        }
+        
+        $tanggalEkspor = $this->request->getPost('tanggal');
+
+        if($tanggalEkspor != null){
+            $dateObject = DateTime::createFromFormat('d-m-Y', $tanggalEkspor);
+            $tanggalEkspor = $dateObject->format('Y-m-d');
+        }
+
+        if($this->progressModel->save([
+            'id' => $id,
+            'id_perusahaan' => 1,
+            'tanggal_ekspor' => $tanggalEkspor,
             'negara_ekspor' => $this->request->getPost('negara'),
             'jenis_ekspor' => $this->request->getPost('jenis'),
             'produk_ekspor' => $this->request->getPost('produk'),
@@ -117,13 +149,16 @@ class ProgressController extends BaseController
             'nilai_ekspor_rp' => $this->request->getPost('nilai_ekspor_rp'),
             'nilai_ekspor_usd' => $this->request->getPost('nilai_ekspor_usd'),
             'kuantitas_ekspor' => $this->request->getPost('kuantitas'),
-            'bukti_ekspor' => $this->request->getPost('bukti')
-        ];
-        
-        // Lakukan update berdasarkan ID
-        $this->progressModel->update($id, $data);
+            'bukti_ekspor' => $namaBukti
+        ]) == false){
+            if($namaBukti != $buktiLama){
+                unlink('bukti_ekspor/' . $namaBukti);
+            }
+            return view('/progress/edit_progress', ['progress' => $this->progressModel->getProgress($id), 'errors' => $this->progressModel->errors()]);
+        }
 
-        // Redirect setelah update
+        session()->setFlashdata('message', 'Progress berhasil diubah.');
+
         return redirect()->to('/progress');
     }
 }
