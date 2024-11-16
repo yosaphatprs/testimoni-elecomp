@@ -97,8 +97,7 @@ Detail Pencapaian Ekspor
 <script type="text/javascript">
 src = document.getElementById("img_bukti").src;
 document.getElementById("img_bukti").onclick = function() {
-    console.log(src);
-    location.href = src;
+    window.open(src, '_blank').focus();
 };
 </script>
 <?= $this->endSection() ?>
