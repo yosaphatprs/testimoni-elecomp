@@ -8,7 +8,11 @@ class DropTbPencapaianEkspor extends Migration
 {
     public function up()
     {
-        $this->forge->dropTable('tb_pencapaian_ekspor');
+        $result = $this->db->query("SHOW TABLES LIKE 'tb_pencapaian_ekspor'")->getResult();
+
+        if (!empty($result)) {
+            $this->forge->dropTable('tb_pencapaian_ekspor');
+        }
     }
 
     public function down()

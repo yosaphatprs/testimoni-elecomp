@@ -8,7 +8,11 @@ class DropTbDataPerusahaan extends Migration
 {
     public function up()
     {
-        $this->forge->dropTable('tb_data_perusahaan');
+        $result = $this->db->query("SHOW TABLES LIKE 'tb_data_perusahaan'")->getResult();
+
+        if (!empty($result)) {
+            $this->forge->dropTable('tb_data_perusahaan');
+        }
     }
 
     public function down()
