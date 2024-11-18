@@ -84,6 +84,8 @@ class CreateTbDataPerusahaan extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('tb_data_perusahaan');
+        if (!empty($result)) {
+            $this->forge->dropTable('tb_data_perusahaan');
+        }
     }
 }
