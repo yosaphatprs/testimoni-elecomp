@@ -9,6 +9,13 @@
     position: relative;
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        height: calc(100vh - 200px); /* Menyesuaikan untuk perangkat lebih kecil */
+    }
+}
+
+
 
 /* Profile Image Adjustments */
 .profile-image {
@@ -265,7 +272,7 @@
 
 .sertifikasi-grid {
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(2, 500px);
     gap: 10px;
     margin-bottom: 30px;
 }
@@ -558,3 +565,18 @@
     color: #000;
     /* Optional: Change text color for active tab */
 }
+
+#pdf-viewer {
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+.pdf-canvas {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+}
+

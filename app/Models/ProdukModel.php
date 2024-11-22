@@ -65,4 +65,11 @@ class ProdukModel extends Model
                     ->select('perusahaan.*, produk.*')
                     ->findAll();
     }
+
+    public function getProdukById($id_perusahaan)
+    {
+        return $this->select('produk_sebelum, produk_setelah') // Ambil kedua gambar
+                    ->where('id_perusahaan', $id_perusahaan)
+                    ->first(); // Mengambil satu data berdasarkan id_perusahaan
+    }
 }

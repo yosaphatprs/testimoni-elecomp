@@ -65,4 +65,12 @@ class LegalitasModel extends Model
                     ->select('perusahaan.*, legalitas.*')
                     ->findAll();
     }
+
+    public function getLegalitasById($id_perusahaan)
+    {
+        return $this->select('legalitas_sebelum, legalitas_setelah')
+                    ->where('id_perusahaan', $id_perusahaan)
+                    ->first();
+    }
+
 }

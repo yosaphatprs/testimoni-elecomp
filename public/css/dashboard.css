@@ -63,9 +63,10 @@
 /* Styling untuk Contact Details dan Address Details */
 .company-information {
     display: flex;
+    flex-wrap: wrap; /* Agar elemen bisa turun ke baris baru pada layar kecil */
     justify-content: center;
     background-color: rgba(255, 247, 212, 0.3);
-    width: 93%; 
+    width: 93%;
     align-items: center;
     padding: 10px 30px;
     gap: 30px;
@@ -80,9 +81,10 @@
     border-radius: 8px;
     margin-bottom: 15px;
     padding: 10px;
-    width: auto; 
-    white-space: nowrap; 
-    flex-grow: 1; 
+    flex-grow: 1; /* Ambil ruang yang tersedia secara proporsional */
+    min-width: 200px; /* Minimum lebar untuk elemen */
+    flex-basis: calc(50% - 30px); /* Default: bagi ruang secara seimbang */
+    text-align: center; /* Pastikan konten rata tengah */
 }
 
 .user-details {
@@ -100,18 +102,54 @@
     right: 0;
 }
 
-/* Profile content padding */
-.content-profile {
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+/* Menghapus garis pembatas pada layar kecil */
+@media (max-width: 768px) {
+    .user-details::after {
+        display: none;
+    }
+
+    .company-information {
+        flex-direction: column; /* Ubah elemen menjadi kolom */
+        align-items: stretch; /* Penuhi lebar penuh */
+        padding: 10px 15px; /* Sesuaikan padding untuk layar kecil */
+    }
+
+    .user-details,
+    .bootcamp-details {
+        flex-basis: 100%; /* Elemen penuh lebar */
+        margin-bottom: 20px;
+        text-align: left; /* Rata kiri untuk teks */
+    }
 }
 
+/* Tambahan untuk layar sangat kecil */
+@media (max-width: 480px) {
+    .company-information {
+        padding: 10px; /* Kurangi padding pada layar sangat kecil */
+    }
+
+    .user-details,
+    .bootcamp-details {
+        padding: 5px; /* Kurangi padding dalam elemen */
+        font-size: 14px; /* Kurangi ukuran font untuk teks */
+    }
+}
+
+
+/* Profile content padding */
+/* Kontainer utama profil */
+.content-profile {
+    padding: 20px 50px;
+    box-sizing: border-box; /* Pastikan padding dihitung dalam dimensi elemen */
+}
+
+/* Bar pencarian */
 .search-bar-container {
     display: flex;
+    flex-wrap: wrap; /* Agar elemen turun ke baris baru pada layar kecil */
     justify-content: space-between;
     align-items: center;
+    gap: 15px; /* Tambahkan jarak antar elemen */
     margin-top: 20px;
 }
 
@@ -122,13 +160,13 @@
 }
 
 .search-input-container {
-display: flex;
-justify-content: flex-end;
-align-items: center;
-width: 361px;
-position: relative; /* Tambahkan ini untuk membuat posisi icon berdasarkan container */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%; /* Default: full width */
+    max-width: 400px; /* Batas maksimum */
+    position: relative;
 }
-
 
 .search-input {
     width: 100%;
@@ -156,10 +194,11 @@ position: relative; /* Tambahkan ini untuk membuat posisi icon berdasarkan conta
     color: #4C3D3D;
     cursor: pointer;
 }
-/* Table styling */
+
+/* Tabel */
 .table-container {
     margin-top: 20px;
-    
+    overflow-x: auto; /* Tambahkan scroll horizontal jika tabel terlalu lebar */
 }
 
 table {
@@ -168,6 +207,7 @@ table {
     margin-top: 20px;
     border-radius: 5px;
     overflow: hidden;
+    min-width: 600px; /* Batas minimum agar tabel tidak terpotong */
 }
 
 table, th, td {
@@ -192,4 +232,43 @@ tbody tr:nth-child(even) {
 td {
     padding: 10px;
     text-align: left;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .content-profile {
+        padding: 15px; /* Kurangi padding pada layar kecil */
+    }
+
+    .search-bar-container {
+        flex-direction: column; /* Elemen baris diubah menjadi kolom */
+        gap: 10px; /* Tambahkan jarak antar elemen */
+    }
+
+    .overview-title {
+        font-size: 20px; /* Kurangi ukuran font pada layar kecil */
+    }
+
+    .search-input-container {
+        max-width: 100%; /* Gunakan full width pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        font-size: 14px; /* Kurangi ukuran font dalam input */
+    }
+
+    .overview-title {
+        font-size: 18px; /* Sesuaikan ukuran font */
+    }
+
+    table {
+        min-width: unset; /* Hilangkan batas minimum lebar tabel */
+    }
+
+    th, td {
+        font-size: 14px; /* Kurangi ukuran font tabel */
+        padding: 8px; /* Kurangi padding untuk memperbaiki tata letak */
+    }
 }
